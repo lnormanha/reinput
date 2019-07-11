@@ -1,57 +1,57 @@
-import { Platform } from "react-native";
+import { Platform } from 'react-native'
 
-import pick from "../services/pick";
+import pick from '../services/pick'
 
-export const SCALE_FACTOR = 1.5;
+export const SCALE_FACTOR = 1.5
 
 export const columns = {
-  flexDirection: "row",
-  flexWrap: "wrap",
-  justifyContent: "center",
-  alignItems: "center"
-};
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
 
 export const row = {
-  alignItems: "center",
-  flexDirection: "row",
-  overflow: "hidden"
-};
+  alignItems: 'center',
+  flexDirection: 'row',
+  overflow: 'hidden'
+}
 
 export const cell = {
-  justifyContent: "center"
-};
+  justifyContent: 'center'
+}
 
 export const container = props => {
-  const { marginTop = 0, labelSpacingTop = 0 } = props;
+  const { marginTop = 0, labelSpacingTop = 0 } = props
   return {
-    alignSelf: "flex-start",
+    alignSelf: 'flex-start',
     marginBottom: props.marginBottom,
     marginLeft: props.marginLeft,
     marginRight: props.marginRight,
     marginTop: marginTop + (props.label ? labelSpacingTop : 0),
     flex: 1
-  };
-};
+  }
+}
 
 export const input = (props = {}, stateHeight, hasValue) => {
   const autogrowHeight =
-    props.multiline && props.height ? props.height : stateHeight;
+    props.multiline && props.height ? props.height : stateHeight
   const multilineHeight = props.multiline
     ? autogrowHeight
-    : props.fontSize * SCALE_FACTOR;
-  const height = props.paddingTop + props.paddingBottom + multilineHeight;
+    : props.fontSize * SCALE_FACTOR
+  const height = props.paddingTop + props.paddingBottom + multilineHeight
   const styles = pick(props, [
-    "color",
-    "fontFamily",
-    "fontSize",
-    "fontWeight",
-    "maxHeight",
-    "minHeight",
-    "paddingBottom",
-    "paddingLeft",
-    "paddingRight",
-    "paddingTop"
-  ]);
+    'color',
+    'fontFamily',
+    'fontSize',
+    'fontWeight',
+    'maxHeight',
+    'minHeight',
+    'paddingBottom',
+    'paddingLeft',
+    'paddingRight',
+    'paddingTop'
+  ])
 
   return {
     ...styles,
@@ -60,8 +60,8 @@ export const input = (props = {}, stateHeight, hasValue) => {
       ios: { height },
       android: {
         height,
-        textAlignVertical: "top"
+        textAlignVertical: 'top'
       }
     })
-  };
-};
+  }
+}

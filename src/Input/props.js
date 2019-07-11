@@ -43,7 +43,9 @@ export const propTypes = {
   paddingRight: PropTypes.number,
   paddingTop: PropTypes.number,
   register: PropTypes.func.isRequired,
-  style: PropTypes.node
+  style: PropTypes.node,
+  showCountryPicker: PropTypes.bool,
+  onChangeCountry: PropTypes.func
 }
 
 /** @type {import('../types').ReinputProps} */
@@ -69,6 +71,6 @@ export const defaultProps = {
   value: undefined
 }
 
-export const pickTextInputProps = (props) => {
+export const pickTextInputProps = props => {
   return pick(props, Object.keys(TextInput.propTypes))
 }

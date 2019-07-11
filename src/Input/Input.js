@@ -96,12 +96,14 @@ export default class ReinputInput extends React.Component {
         />
 
         {this.props.showCountryPicker ? (
-          <CountryPicker
-            countryList={COUNTRIES}
-            onChange={value => this.props.onChangeCountry(value)}
-            cca2={'US'}
-            translation="eng"
-          />
+          <View style={{position: 'absolute', left: 10, alignSelf: 'center'}}>
+            <CountryPicker
+              countryList={COUNTRIES}
+              onChange={value => this.props.onChangeCountry(value)}
+              cca2={'US'}
+              translation="eng"
+            />
+          </View>
         ) : null}
         <View style={styles.container(this.props)}>
           <View

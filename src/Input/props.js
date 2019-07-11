@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types'
-import { TextInput } from 'react-native'
+import PropTypes from "prop-types";
+import { TextInput } from "react-native";
 
-import { BASE_UNIT, BLACK, FONT, noop } from '../services/constants'
-import pick from '../services/pick'
-import * as ErrorProps from '../Error/props'
-import * as IconProps from '../Icon/props'
-import * as LabelProps from '../Label/props'
-import * as PlaceholderProps from '../Placeholder/props'
-import * as UnderlineProps from '../Underline/props'
+import { BASE_UNIT, BLACK, FONT, noop } from "../services/constants";
+import pick from "../services/pick";
+import * as ErrorProps from "../Error/props";
+import * as IconProps from "../Icon/props";
+import * as LabelProps from "../Label/props";
+import * as PlaceholderProps from "../Placeholder/props";
+import * as UnderlineProps from "../Underline/props";
 
 export const propTypes = {
   // ...TextInput.propTypes, // Breaks IDE auto-completion
@@ -45,8 +45,10 @@ export const propTypes = {
   register: PropTypes.func.isRequired,
   style: PropTypes.node,
   showCountryPicker: PropTypes.bool,
-  onChangeCountry: PropTypes.func
-}
+  onChangeCountry: PropTypes.func,
+  cca2: PropTypes.string,
+  countryCloseIcon: PropTypes.string
+};
 
 /** @type {import('../types').ReinputProps} */
 export const defaultProps = {
@@ -55,7 +57,7 @@ export const defaultProps = {
   style: {},
   color: BLACK,
   fontSize: FONT,
-  fontWeight: 'normal',
+  fontWeight: "normal",
   labelSpacingTop: BASE_UNIT * 2,
   marginBottom: BASE_UNIT,
   marginTop: 0,
@@ -67,10 +69,11 @@ export const defaultProps = {
   paddingLeft: 0,
   paddingRight: 0,
   paddingTop: BASE_UNIT / 2,
-  register: function () {},
-  value: undefined
-}
+  register: function() {},
+  value: undefined,
+  cca2: "US"
+};
 
 export const pickTextInputProps = props => {
-  return pick(props, Object.keys(TextInput.propTypes))
-}
+  return pick(props, Object.keys(TextInput.propTypes));
+};

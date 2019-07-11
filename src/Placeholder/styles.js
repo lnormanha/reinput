@@ -1,18 +1,18 @@
-import pick from '../services/pick'
+import pick from "../services/pick";
 
 export const placeholder = (props = {}) => ({
   ...pick(props, [
-    'fontFamily',
-    'fontSize',
-    'fontWeight',
-    'paddingBottom',
-    'paddingLeft',
-    'paddingRight',
-    'paddingTop'
+    "fontFamily",
+    "fontSize",
+    "fontWeight",
+    "paddingBottom",
+    "paddingLeft",
+    "paddingRight",
+    "paddingTop"
   ]),
-  backgroundColor: 'transparent',
+  backgroundColor: "transparent",
   color: props.placeholderColor,
   opacity: props.placeholderOpacity,
-  position: 'absolute',
+  position: "absolute",
   top: 2
-})
+});

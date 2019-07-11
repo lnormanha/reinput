@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import { GRAY, DURATION } from '../services/constants'
-import pick from '../services/pick'
+import { GRAY, DURATION } from "../services/constants";
+import pick from "../services/pick";
 
 export const internalPropTypes = {
   label: PropTypes.string,
@@ -10,7 +10,7 @@ export const internalPropTypes = {
   labelActiveTop: PropTypes.number,
   labelColor: PropTypes.string,
   labelDuration: PropTypes.number
-}
+};
 
 export const propTypes = {
   ...internalPropTypes,
@@ -26,16 +26,16 @@ export const propTypes = {
   paddingLeft: PropTypes.number,
   paddingRight: PropTypes.number,
   paddingTop: PropTypes.number
-}
+};
 
 /** @type {PropTypes.InferProps<typeof propTypes>} */
 export const defaultProps = {
-  labelActiveScale: 0.8,
+  labelActiveScale: 1,
   labelActiveTop: -22,
   labelColor: GRAY,
   labelDuration: DURATION
-}
+};
 
-export const pickLabelProps = (props) => {
-  return pick(props, Object.keys(propTypes))
-}
+export const pickLabelProps = props => {
+  return pick(props, Object.keys(propTypes));
+};

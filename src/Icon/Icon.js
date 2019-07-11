@@ -38,8 +38,7 @@ export default class ReinputIcon extends React.Component {
               resizeMode='contain'
               source={icon}
               style={{
-                flex: 1,
-                aspectRatio: 1,
+                flex: 1, aspectRatio: 1,
                 maxHeight: this.props.overlay ? '85%' : this.props.iconHeight
               }}
             />

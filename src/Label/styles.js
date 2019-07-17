@@ -1,36 +1,33 @@
-import pick from '../services/pick'
-import { BLUE } from '../services/constants'
+import pick from "../services/pick";
+import { BLUE } from "../services/constants";
 
 export const container = ({ top, translateY, scale }) => ({
-  marginLeft: '-100%',
-  position: 'absolute',
+  marginLeft: "-100%",
+  position: "absolute",
   top,
-  transform: [
-    { translateY },
-    { scale }
-  ],
-  width: '200%'
-})
+  transform: [{ translateY }, { scale }],
+  width: "200%"
+});
 
 export const label = (props = {}) => {
-  var color = props.labelColor
+  var color = props.labelColor;
   if (props.error) {
-    color = props.errorColor
+    color = props.errorColor;
   } else if (props.focused) {
-    color = props.labelActiveColor || props.activeColor || BLUE
+    color = props.labelActiveColor || props.activeColor || BLUE;
   }
 
   return {
     ...pick(props, [
-      'fontFamily',
-      'fontSize',
-      'fontWeight',
-      'paddingLeft',
-      'paddingRight'
+      "fontFamily",
+      "fontSize",
+      "fontWeight",
+      "paddingLeft",
+      "paddingRight"
     ]),
     color,
-    paddingLeft: 1, // cursor indicator
-    left: '50%',
+    paddingLeft: props.focused ? 10 : 1, // cursor indicator
+    left: "50%",
     top: 0
-  }
-}
+  };
+};

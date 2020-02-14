@@ -1,8 +1,6 @@
 import React from "react";
 import { View, TextInput } from "react-native";
 
-import CountryPicker from "react-native-country-picker-modal";
-
 import Error, { pickErrorProps } from "../Error";
 import Icon, { pickIconInternalProps } from "../Icon";
 import Label, { pickLabelProps } from "../Label";
@@ -95,25 +93,6 @@ export default class ReinputInput extends React.Component {
         />
 
         <View style={styles.container(this.props)}>
-          {this.props.showCountryPicker ? (
-            <View
-              style={{
-                position: "absolute",
-                left: 0,
-                alignSelf: "center",
-                zIndex: 20
-              }}
-            >
-              <CountryPicker
-                countryList={COUNTRIES}
-                onChange={value => this.props.onChangeCountry(value)}
-                cca2={this.props.cca2}
-                translation="eng"
-                closeButtonImage={this.props.countryCloseIcon}
-                closeable={true}
-              />
-            </View>
-          ) : null}
           <View
             accessible={this.props.accessible}
             accessibilityLabel={

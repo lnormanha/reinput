@@ -43,7 +43,5 @@
     "test:lint": "eslint src",
     "test": "npm run test:lint"
   },
-  "dependencies": {
-    "react-native-country-picker-modal": "^0.7.1"
-  }
+  "dependencies": {}
 }
